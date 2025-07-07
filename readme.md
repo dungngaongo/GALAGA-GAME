@@ -1,8 +1,8 @@
-# GAME SPACE INVADER
+# GAME GALAGA
 
 Nội dung cần báo cáo của môn đồ án:
 
-> "Mô phỏng trò chơi Space Invader, sử dụng joystick để điều khiển.
+> "Mô phỏng trò chơi Galaga, sử dụng joystick để điều khiển.
 > Yêu cầu:
 >
 > - Dùng hardware random generator để sinh quái ngẫu nhiên.
@@ -10,7 +10,7 @@ Nội dung cần báo cáo của môn đồ án:
 
 ## GIỚI THIỆU
 
-**Đề bài**: _Mô phỏng trò chơi Space Invader_
+**Đề bài**: _Mô phỏng trò chơi Galaga_
 
 **Sản phẩm:**
 
@@ -20,16 +20,16 @@ Nội dung cần báo cáo của môn đồ án:
 4. Phát ra âm thanh và sáng led LD3 khi tiêu diệt quái.
 
 - Ảnh chụp minh họa:\
-  ![Ảnh minh họa](images/space_inavader.jpg)
+  ![Ảnh minh họa](images/galaga.jpg)
 
 ## TÁC GIẢ
 
-- Tên nhóm: VEmb
+- Tên nhóm: 9h53
 - Thành viên trong nhóm
   |STT|Họ tên|MSSV|Công việc|
   |--:|--|--|--|
-  |1|Nguyễn Hiệp Hồng Quân|20215633|Tạo quái hiển thị ngẫu nhiên, kết nối joystick, kết nối còi buzeer và led LD3 khi tiêu diệt quái|
-  |2|Nguyễn Thành Bách|20204812|Tạo giao diện game, xử lý logic tiêu diệt quái, điểm số, số mạng, điều khiển di chuyển bằng joystick|
+  |1|Nguyễn Tấn Dũng|20225293|Xử lý logic tiêu diệt quái, điểm số, số mạng, điều khiển di chuyển bằng joystick, kết nối còi buzeer và led LD3 khi tiêu diệt quái|
+  |2|Phan Đình Can|20210108|Tạo giao diện game, tạo quái hiển thị ngẫu nhiên, kết nối joystick|
 
 ## MÔI TRƯỜNG HOẠT ĐỘNG
 
@@ -62,25 +62,3 @@ _Cách nối dây, kết nối giữa các linh kiện_
 | Thành phần | Vai trò                                                    |
 | ---------- | ---------------------------------------------------------- |
 | Firmware   | Điều khiển trò chơi, xử lý joystick, buzzer, màn hình, RNG |
-
-### ĐẶC TẢ HÀM
-
-- Giải thích một số hàm quan trọng: ý nghĩa của hàm, tham số vào, ra
-
-  ```C
-     // Hàm cập nhật vị trí của kẻ địch
-    /**
-      *  Hàm updateEnemy quản lý di chuyển và tạo kể địch mới, sử dụng RNG phần cứng để tạo ngẫu nhiên.
-
-      *  Tham số @param dt: khoảng thời gian trôi qua, để cập nhật vị trí và giảm spawnRate
-      Các hàm con (update, updateCoordinate, updateVelocity, updateDisplayStatus) xử lý vị trí, vận tốc, và trạng thái hiển thị
-      */
-    void updateEnemy(uint8_t dt) {
-        ...
-        }
-  ```
-
-### KẾT QUẢ
-
-[Video demo Space Invaders](https://drive.google.com/file/d/1ug3VB_5Ezff92ucPog5qQGBh5jKgkAz7/view?usp=sharing)
-*Video: Demo trò chơi Space Invader trên STM32F429*
