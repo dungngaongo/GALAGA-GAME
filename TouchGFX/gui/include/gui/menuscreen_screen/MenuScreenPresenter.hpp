@@ -25,7 +25,7 @@ public:
      */
     virtual void deactivate();
 
-    virtual ~MenuScreenPresenter() {};
+    virtual ~MenuScreenPresenter() {}
 
 private:
     MenuScreenPresenter();

@@ -66,8 +66,11 @@ void Error_Handler(void);
 #define FRAME_RATE_GPIO_Port GPIOE
 #define MCU_ACTIVE_Pin GPIO_PIN_5
 #define MCU_ACTIVE_GPIO_Port GPIOE
-/* USER CODE BEGIN Private defines */
+#define SPI5_NCS_Pin GPIO_PIN_1
+#define SPI5_NCS_GPIO_Port GPIOC
 
+/* USER CODE BEGIN Private defines */
+extern RNG_HandleTypeDef hrng;
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

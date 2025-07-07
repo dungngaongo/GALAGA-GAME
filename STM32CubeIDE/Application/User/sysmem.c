@@ -54,6 +54,8 @@
 extern int errno;
 register char * stack_ptr asm("sp");
 
+#include <sys/types.h> // Added as a workaround for Bugzilla 158966
+
 /* Functions */
 
 /**

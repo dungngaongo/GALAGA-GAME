@@ -67,37 +67,37 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := SpaceInvaders
+BUILD_ARTIFACT_NAME := STM32F429I_DISCO_REV_D01
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-SpaceInvaders.elf \
+STM32F429I_DISCO_REV_D01.elf \
 
 MAP_FILES += \
-SpaceInvaders.map \
+STM32F429I_DISCO_REV_D01.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-SpaceInvaders.list \
+STM32F429I_DISCO_REV_D01.list \
 
 OBJCOPY_HEX += \
-SpaceInvaders.hex \
+STM32F429I_DISCO_REV_D01.hex \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: SpaceInvaders.elf secondary-outputs
+main-build: STM32F429I_DISCO_REV_D01.elf secondary-outputs
 
 # Tool invocations
-SpaceInvaders.elf SpaceInvaders.map: $(OBJS) $(USER_OBJS) C:\Users\User\Desktop\Source_code\STM32CubeIDE\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "SpaceInvaders.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\User\Desktop\Source_code\STM32CubeIDE\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SpaceInvaders.map" -Wl,--gc-sections -static -LC:/git/STM32F429-dk/untouched/rev_D/stm32f429i_disco_rev_e01/STM32F429I_DISCO_REV_E01/Middlewares/ST/touchgfx/lib/core/cortex_m4f/gcc -LC:/git/STM32F429-dk/rev_E01/stm32f429i_disco_rev_e01/STM32F429I_DISCO_REV_E01/Middlewares/ST/touchgfx/lib/core/cortex_m4f/gcc -LC:/TouchGFXProjects/SpaceInvaders/Middlewares/ST/touchgfx/lib/core/cortex_m4f/gcc -LD:/hoctap/20222/Embedded/source/SpaceInvaders/Middlewares/ST/touchgfx/lib/core/cortex_m4f/gcc --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+STM32F429I_DISCO_REV_D01.elf STM32F429I_DISCO_REV_D01.map: $(OBJS) $(USER_OBJS) C:\Users\User\Desktop\space_invader_VEmb\STM32CubeIDE\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "STM32F429I_DISCO_REV_D01.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\User\Desktop\space_invader_VEmb\STM32CubeIDE\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F429I_DISCO_REV_D01.map" -Wl,--gc-sections -static -L../../Middlewares/ST/touchgfx/lib/core/cortex_m4f/gcc --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -106,19 +106,19 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-SpaceInvaders.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "SpaceInvaders.list"
+STM32F429I_DISCO_REV_D01.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "STM32F429I_DISCO_REV_D01.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-SpaceInvaders.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "SpaceInvaders.hex"
+STM32F429I_DISCO_REV_D01.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "STM32F429I_DISCO_REV_D01.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) SpaceInvaders.elf SpaceInvaders.hex SpaceInvaders.list SpaceInvaders.map default.size.stdout
+	-$(RM) STM32F429I_DISCO_REV_D01.elf STM32F429I_DISCO_REV_D01.hex STM32F429I_DISCO_REV_D01.list STM32F429I_DISCO_REV_D01.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX)
